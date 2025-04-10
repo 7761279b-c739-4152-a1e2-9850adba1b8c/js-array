@@ -1,35 +1,55 @@
 
 .current {
-    input {
-        &::placeholder {
-            color: $color-input-placeholder;
+    form {
+        margin-top: rems(32px);
+        width: 512px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $breakpoint-small) {
+            flex-direction: row;
         }
-        &:focus {
-            border-color: $color-theme;
-            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
-        }
-        &.invalid {
-            background-color: $color-input-background-wrong;
-            border-color: $color-input-border-wrong;
+        justify-content: space-between;
+        gap: rems(16px);
+        input {
+            @media (min-width: $breakpoint-small) {
+                flex: 1 1 100px;
+            }
+            &::placeholder {
+                color: $color-input-placeholder;
+            }
             &:focus {
-                border-color: $color-input-wrong;
-                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-input-wrong, 0.6);
+                border-color: $color-theme;
+                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+            }
+            &.invalid {
+                background-color: $color-input-background-wrong;
+                border-color: $color-input-border-wrong;
+                &:focus {
+                    border-color: $color-input-wrong;
+                    box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-input-wrong, 0.6);
+                }
             }
         }
-    }
-    button {
-        color: $color-text;
-        &:focus, &:hover {
-            border-color: $color-theme;
-            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+        button {
+            @media (min-width: $breakpoint-small) {
+                flex: 1 1 25px;
+                max-width: 128px;
+            }
+            color: $color-text;
+            text-align: center;
+            &:focus, &:hover {
+                border-color: $color-theme;
+                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+            }
         }
-    }
 
-    input, button {
-        padding: rems(8px);
-        border-radius: rems(4px);
-        outline: 0;
-        background-color: $color-input-background;
-        border: 2px solid $color-input-border;
+        input, button {
+            padding: rems(8px);
+            border-radius: rems(4px);
+            outline: 0;
+            background-color: $color-input-background;
+            border: 2px solid $color-input-border;
+        }
     }
 }

@@ -6,17 +6,20 @@
 body {
     background-color: $color-background;
     color: $color-text;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 .container {
-    margin: 0 Min(64px, 10%);
+    margin: 0 Min(rems(64px), 10%);
 }
 
 .box {
     background-color: $color-box-background;
     border-radius: rems(8px);
     border: 1px solid $color-box-border;
-    margin: 16px 0;
+    margin: rems(16px) 0;
     padding: rems(32px);
     width: 100%;
     display: flex;
@@ -27,8 +30,16 @@ body {
 img {
     width: 512px;
     max-width: 100%;
+    box-sizing: content-box;
+    border: 3px solid $color-image-border;
+    border-radius: 2px;
 }
 
 .hidden {
     display: none;
+}
+
+h2 {
+    margin: 0 0 rems(16px) 0;
+    align-self: baseline;
 }

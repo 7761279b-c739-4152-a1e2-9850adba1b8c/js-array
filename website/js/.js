@@ -6,7 +6,7 @@ const submit = document.getElementById('submit');
 const form = document.getElementsByTagName('form')[0];
 
 const email_regex = new RegExp(String.raw`^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$`);
-const url = "https://picsum.photos/256?random="
+const url = "https://picsum.photos/512?random="
 
 randomindex = 0;
 function newCurrentImage() {
@@ -66,7 +66,8 @@ function assignCurrentImage(email) {
     }
     let grids = emailAssign.getElementsByClassName('img-grid');
     if (grids.length == 0) {
-        emailAssign.innerHTML = `<h2 class="email">${email}</h2>
+        emailAssign.innerHTML = `<p class="email hidden">${email}</p>
+            <h2>Images for: <code>${email}</code>.</h2>
             <div class="img-grid">
             </div>`;
         grids = emailAssign.getElementsByClassName('img-grid');
@@ -79,6 +80,7 @@ function assignCurrentImage(email) {
 
 newCurrentImage();
 
+assignCurrentImage('test1');
 assignCurrentImage('test1');
 assignCurrentImage('test1');
 assignCurrentImage('test1');
