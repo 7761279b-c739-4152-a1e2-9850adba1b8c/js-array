@@ -1,0 +1,35 @@
+
+.current {
+    input {
+        &::placeholder {
+            color: $color-input-placeholder;
+        }
+        &:focus {
+            border-color: $color-theme;
+            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+        }
+        &.invalid {
+            background-color: $color-input-background-wrong;
+            border-color: $color-input-border-wrong;
+            &:focus {
+                border-color: $color-input-wrong;
+                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-input-wrong, 0.6);
+            }
+        }
+    }
+    button {
+        color: $color-text;
+        &:focus, &:hover {
+            border-color: $color-theme;
+            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+        }
+    }
+
+    input, button {
+        padding: rems(8px);
+        border-radius: rems(4px);
+        outline: 0;
+        background-color: $color-input-background;
+        border: 2px solid $color-input-border;
+    }
+}

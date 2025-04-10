@@ -1,0 +1,18 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"../scss/styles.scss",
+		"../scss/_variables.scss",
+		"../scss/_layout.scss",
+		"../scss/_current.scss"
+	],
+	"sourcesContent": [
+		"\r\n@import 'variables';\r\n\r\n@import 'layout';\r\n@import 'current';",
+		"\r\n$color-background: #fff;\r\n$color-text: #000;\r\n\r\n$color-box-background: #ddd;\r\n$color-box-border: #aaa;\r\n$color-theme: #f0f;\r\n\r\n$color-input-background: #fff;\r\n$color-input-border: #000;\r\n$color-input-placeholder: #ddd;\r\n\r\n$color-input-wrong: #d33;\r\n$color-input-background-wrong: #ecc;\r\n$color-input-border-wrong: #f99;\r\n\r\n",
+		"\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    background-color: $color-background;\r\n    color: $color-text;\r\n}\r\n\r\n.container {\r\n    margin: 0 10%;\r\n}\r\n\r\n.box {\r\n    background-color: $color-box-background;\r\n    border-radius: 8px;\r\n    border: 1px solid $color-box-border;\r\n}\r\n\r\n.hidden {\r\n    display: none;\r\n}",
+		"\r\n.current {\r\n    input {\r\n        &::placeholder {\r\n            color: $color-input-placeholder;\r\n        }\r\n        &:focus {\r\n            border-color: $color-theme;\r\n            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);\r\n        }\r\n        &.invalid {\r\n            background-color: $color-input-background-wrong;\r\n            border-color: $color-input-border-wrong;\r\n            &:focus {\r\n                border-color: $color-input-wrong;\r\n                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-input-wrong, 0.6);\r\n            }\r\n        }\r\n    }\r\n    button {\r\n        color: $color-text;\r\n        &:focus, &:hover {\r\n            border-color: $color-theme;\r\n            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);\r\n        }\r\n    }\r\n\r\n    input, button {\r\n        padding: rems(8px);\r\n        border-radius: rems(4px);\r\n        outline: 0;\r\n        background-color: $color-input-background;\r\n        border: 2px solid $color-input-border;\r\n    }\r\n}"
+	],
+	"names": [],
+	"mappings": ";AECA,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,UAAU;CACzB;;;AAED,AAAA,IAAI,CAAC;EACD,gBAAgB,EDLD,IAAI;ECMnB,KAAK,EDLI,IAAI;CCMhB;;;AAED,AAAA,UAAU,CAAC;EACP,MAAM,EAAE,KAAK;CAChB;;;AAED,AAAA,IAAI,CAAC;EACD,gBAAgB,EDXG,IAAI;ECYvB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CDZF,IAAI;CCatB;;;AAED,AAAA,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;CAChB;;;ACrBD,AAEQ,QAFA,CACJ,KAAK,AACA,aAAa,CAAC;EACX,KAAK,EFMS,IAAI;CELrB;;;AAJT,AAKQ,QALA,CACJ,KAAK,AAIA,MAAM,CAAC;EACJ,YAAY,EFDV,IAAI;EEEN,UAAU,EAAE,KAAK,CAAC,CAAC,CAAC,GAAG,CAAC,GAAG,CAAM,oBAAI,EAAU,CAAC,CAAC,CAAC,CAAC,GAAG,CFFpD,sBAAI;CEGT;;;AART,AASQ,QATA,CACJ,KAAK,AAQA,QAAQ,CAAC;EACN,gBAAgB,EFEG,IAAI;EEDvB,YAAY,EFEG,IAAI;CEGtB;;;AAhBT,AAYY,QAZJ,CACJ,KAAK,AAQA,QAAQ,AAGJ,MAAM,CAAC;EACJ,YAAY,EFFR,IAAI;EEGR,UAAU,EAAE,KAAK,CAAC,CAAC,CAAC,GAAG,CAAC,GAAG,CAAM,oBAAI,EAAU,CAAC,CAAC,CAAC,CAAC,GAAG,CFHlD,sBAAI;CEIX;;;AAfb,AAkBI,QAlBI,CAkBJ,MAAM,CAAC;EACH,KAAK,EFlBA,IAAI;CEuBZ;;;AAxBL,AAoBQ,QApBA,CAkBJ,MAAM,AAED,MAAM,EApBf,QAAQ,CAkBJ,MAAM,AAEQ,MAAM,CAAC;EACb,YAAY,EFhBV,IAAI;EEiBN,UAAU,EAAE,KAAK,CAAC,CAAC,CAAC,GAAG,CAAC,GAAG,CAAM,oBAAI,EAAU,CAAC,CAAC,CAAC,CAAC,GAAG,CFjBpD,sBAAI;CEkBT;;;AAvBT,AA0BI,QA1BI,CA0BJ,KAAK,EA1BT,QAAQ,CA0BG,MAAM,CAAC;EACV,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,SAAS;EACxB,OAAO,EAAE,CAAC;EACV,gBAAgB,EFvBC,IAAI;EEwBrB,MAAM,EAAE,GAAG,CAAC,KAAK,CFvBJ,IAAI;CEwBpB"
+}

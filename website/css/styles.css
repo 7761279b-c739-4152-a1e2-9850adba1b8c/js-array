@@ -1,0 +1,72 @@
+/* line 2, ../../js_arrays_assessment/website/scss/_layout.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 6, ../../js_arrays_assessment/website/scss/_layout.scss */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* line 11, ../../js_arrays_assessment/website/scss/_layout.scss */
+.container {
+  margin: 0 10%;
+}
+
+/* line 15, ../../js_arrays_assessment/website/scss/_layout.scss */
+.box {
+  background-color: #ddd;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+/* line 21, ../../js_arrays_assessment/website/scss/_layout.scss */
+.hidden {
+  display: none;
+}
+
+/* line 4, ../../js_arrays_assessment/website/scss/_current.scss */
+.current input::placeholder {
+  color: #ddd;
+}
+
+/* line 7, ../../js_arrays_assessment/website/scss/_current.scss */
+.current input:focus {
+  border-color: #f0f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* line 11, ../../js_arrays_assessment/website/scss/_current.scss */
+.current input.invalid {
+  background-color: #ecc;
+  border-color: #f99;
+}
+
+/* line 14, ../../js_arrays_assessment/website/scss/_current.scss */
+.current input.invalid:focus {
+  border-color: #d33;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(221, 51, 51, 0.6);
+}
+
+/* line 20, ../../js_arrays_assessment/website/scss/_current.scss */
+.current button {
+  color: #000;
+}
+
+/* line 22, ../../js_arrays_assessment/website/scss/_current.scss */
+.current button:focus, .current button:hover {
+  border-color: #f0f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* line 28, ../../js_arrays_assessment/website/scss/_current.scss */
+.current input, .current button {
+  padding: rems(8px);
+  border-radius: rems(4px);
+  outline: 0;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+/*# sourceMappingURL=styles.css.map */
