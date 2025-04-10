@@ -4,13 +4,19 @@ $color-text: #000;
 
 $color-box-background: #ddd;
 $color-box-border: #aaa;
-$color-theme: #f0f;
+$color-theme: #8e0;
 
 $color-input-background: #fff;
 $color-input-border: #000;
-$color-input-placeholder: #ddd;
+$color-input-placeholder: #aaa;
 
 $color-input-wrong: #d33;
 $color-input-background-wrong: #ecc;
 $color-input-border-wrong: #f99;
 
+$breakpoint-small: 800px;
+$breakpoint-medium: 1280px;
+
+@function rems($value) {
+    @return ($value / 16px) * 1rem;
+}

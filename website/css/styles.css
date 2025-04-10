@@ -11,30 +11,42 @@ body {
 
 /* line 11, ../../js_arrays_assessment/website/scss/_layout.scss */
 .container {
-  margin: 0 10%;
+  margin: 0 Min(64px, 10%);
 }
 
 /* line 15, ../../js_arrays_assessment/website/scss/_layout.scss */
 .box {
   background-color: #ddd;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #aaa;
+  margin: 16px 0;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* line 21, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 27, ../../js_arrays_assessment/website/scss/_layout.scss */
+img {
+  width: 512px;
+  max-width: 100%;
+}
+
+/* line 32, ../../js_arrays_assessment/website/scss/_layout.scss */
 .hidden {
   display: none;
 }
 
 /* line 4, ../../js_arrays_assessment/website/scss/_current.scss */
 .current input::placeholder {
-  color: #ddd;
+  color: #aaa;
 }
 
 /* line 7, ../../js_arrays_assessment/website/scss/_current.scss */
 .current input:focus {
-  border-color: #f0f;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 255, 0.6);
+  border-color: #8e0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
 /* line 11, ../../js_arrays_assessment/website/scss/_current.scss */
@@ -56,17 +68,45 @@ body {
 
 /* line 22, ../../js_arrays_assessment/website/scss/_current.scss */
 .current button:focus, .current button:hover {
-  border-color: #f0f;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 255, 0.6);
+  border-color: #8e0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
 /* line 28, ../../js_arrays_assessment/website/scss/_current.scss */
 .current input, .current button {
-  padding: rems(8px);
-  border-radius: rems(4px);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   outline: 0;
   background-color: #fff;
   border: 2px solid #000;
+}
+
+/* line 1, ../../js_arrays_assessment/website/scss/_assigned.scss */
+#assignedImages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 6, ../../js_arrays_assessment/website/scss/_assigned.scss */
+#assignedImages .img-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+  /* line 6, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  #assignedImages .img-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* line 6, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  #assignedImages .img-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

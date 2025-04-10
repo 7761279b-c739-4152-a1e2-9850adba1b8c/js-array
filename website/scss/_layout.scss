@@ -9,13 +9,24 @@ body {
 }
 
 .container {
-    margin: 0 10%;
+    margin: 0 Min(64px, 10%);
 }
 
 .box {
     background-color: $color-box-background;
-    border-radius: 8px;
+    border-radius: rems(8px);
     border: 1px solid $color-box-border;
+    margin: 16px 0;
+    padding: rems(32px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 512px;
+    max-width: 100%;
 }
 
 .hidden {
