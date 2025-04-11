@@ -22,14 +22,18 @@
     .select {
         display: flex;
         flex-direction: column;
+        gap: rems(16px);
         @media (min-width: $breakpoint-small) {
             flex-direction: row;
         }
         align-items: center;
-        width: 512px;
+        min-width: 512px;
+        width: fit-content;
         max-width: 100%;
 
         h2 {
+            margin: 0;
+            min-width: fit-content;
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 512px;
             }
@@ -37,8 +41,9 @@
 
         select {
             font-size: rems(16px);
-            width: 100%;
-            max-width: 256px;
+            min-width: fit-content;
+            width: 256px;
+            max-width: 100%;
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 256px;
             }
