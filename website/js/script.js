@@ -92,6 +92,7 @@ class EmailGrid {
         }
     }
     addImage(image) {
+        if (this.images.includes(image)) {return;}
         this.images.unshift(image);
         const grid = this.element.getElementsByClassName('img-grid')[0];
         grid.innerHTML = `<img src=${url}${image} alt />` + grid.innerHTML;
