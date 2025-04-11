@@ -58,11 +58,12 @@ h2 {
 
 /* line 3, ../../js_arrays_assessment/website/scss/_current.scss */
 .current h2 {
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 0 0 0;
 }
 
 /* line 6, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form {
+  margin-top: 1rem;
   width: 512px;
   max-width: 100%;
   display: flex;
@@ -79,56 +80,56 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  /* line 16, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form input {
+  /* line 17, ../../js_arrays_assessment/website/scss/_current.scss */
+  .current form input, .current form #reroll {
     flex: 1 1 100px;
   }
 }
 
-/* line 20, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form input::placeholder {
+/* line 21, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form input::placeholder, .current form #reroll::placeholder {
   color: #999;
 }
 
-/* line 23, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form input:focus {
+/* line 24, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form input:focus, .current form #reroll:focus {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
-/* line 27, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form input.invalid {
+/* line 28, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form input.invalid, .current form #reroll.invalid {
   background-color: #ecc;
   border-color: #f99;
 }
 
-/* line 30, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form input.invalid:focus {
+/* line 31, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form input.invalid:focus, .current form #reroll.invalid:focus {
   border-color: #d33;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(221, 51, 51, 0.6);
 }
 
-/* line 36, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form button {
+/* line 37, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form #submit {
   color: #000;
   text-align: center;
 }
 
 @media (min-width: 800px) {
-  /* line 36, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form button {
+  /* line 37, ../../js_arrays_assessment/website/scss/_current.scss */
+  .current form #submit {
     flex: 1 1 25px;
     max-width: 128px;
   }
 }
 
-/* line 43, ../../js_arrays_assessment/website/scss/_current.scss */
-.current form button:focus, .current form button:hover {
+/* line 44, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form #submit:focus, .current form #submit:hover {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
-/* line 49, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 50, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input, .current form button {
   padding: 0.5rem;
   border-radius: 0.25rem;

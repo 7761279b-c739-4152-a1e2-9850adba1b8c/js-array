@@ -1,9 +1,10 @@
 
 .current {
     h2 {
-        margin: rems(32px) 0 rems(16px) 0;
+        margin: rems(32px) 0 0 0;
     }
     form {
+        margin-top: rems(16px);
         width: 512px;
         max-width: 100%;
         display: flex;
@@ -13,7 +14,7 @@
         }
         justify-content: space-between;
         gap: rems(16px);
-        input {
+        input, #reroll {
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 100px;
             }
@@ -33,7 +34,7 @@
                 }
             }
         }
-        button {
+        #submit {
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 25px;
                 max-width: 128px;

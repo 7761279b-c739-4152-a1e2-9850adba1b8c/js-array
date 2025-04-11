@@ -17,10 +17,14 @@
             <div class="current box">
                 <img id="currentImage" src=""/>
                 <h2>Assign image to an email:</h2>
-                <form id="newForm">
+                <form id="assignForm">
                     <label for="email" class="hidden">Email Address</label>
                     <input inputmode="email" id="email" placeholder="Email Address">
                     <button type="submit" id="submit">Submit</button>
+                </form>
+                <form id="imageForm">
+                    <button id="reroll" type="submit" value="new">Choose new image</button>
+                    <button id="previous" type="submit" value="back">Previous image</button>
                 </form>
             </div>
 

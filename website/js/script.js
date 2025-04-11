@@ -4,7 +4,12 @@ const assignedWrapper = document.getElementById('assignedWrapper');
 
 const email = document.getElementById('email');
 const submit = document.getElementById('submit');
-const form = document.getElementById('newForm');
+const assignForm = document.getElementById('assignForm');
+
+const imageForm = document.getElementById('imageForm');
+const nextbutton = document.getElementById('reroll');
+const prevbutton = document.getElementById('previous');
+prevbutton.style.opacity = "0";
 
 const select = document.getElementById('selectEmail');
 
@@ -12,10 +17,24 @@ const email_regex = new RegExp(String.raw`^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]
 const url = "https://picsum.photos/512?random="
 
 randomindex = 0;
+maxrandomindex = 0;
 function newCurrentImage() {
     // get size dynamically?
     randomindex += 1;
     currentImage.src = url + randomindex;
+    if (maxrandomindex < randomindex) {
+        maxrandomindex = randomindex;
+        nextbutton.textContent = "Choose new image";
+    }
+    if (randomindex > 1) {
+        // first reroll after initial image
+        prevbutton.style.opacity = "";
+    }
+}
+function previousImage() {
+    randomindex -= 1;
+    currentImage.src = url + randomindex;
+    nextbutton.textContent = "Next image";
 }
 
 function validEmail() {
@@ -42,9 +61,18 @@ submit.addEventListener('click', () => {
 email.addEventListener('focusout', () => {
     validEmail();
 });
-form.addEventListener('submit', (event) =>  {
+assignForm.addEventListener('submit', (event) =>  {
     event.preventDefault();
     assignCurrentImage(email.value);
+});
+
+imageForm.addEventListener('submit', (event) =>  {
+    event.preventDefault();
+    if (event.submitter.value == 'new') {
+        newCurrentImage();
+    } else if (randomindex > 1) {
+        previousImage();
+    }
 });
 
 class EmailGrid {
@@ -102,7 +130,6 @@ function assignCurrentImage(email) {
             setActiveEmail(email);
         }
     }
-    newCurrentImage();
 }
 
 function setActiveEmail(email) {
