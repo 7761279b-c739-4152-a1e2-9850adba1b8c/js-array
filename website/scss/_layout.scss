@@ -39,7 +39,11 @@ img {
     display: none;
 }
 
-h2 {
+h3 {
     margin: 0 0 rems(16px) 0;
     align-self: baseline;
+    font-weight: 600;
+}
+h2 {
+    margin: 0 0 rems(16px) 0;
 }

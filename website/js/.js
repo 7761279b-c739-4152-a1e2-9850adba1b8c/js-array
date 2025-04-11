@@ -56,7 +56,7 @@ class EmailGrid {
         select.append(selectOption);
         this.element = document.createElement('div');
         this.element.classList.add('box');
-        this.element.innerHTML = `<h2>Images for: <code>${email}</code>.</h2>
+        this.element.innerHTML = `<h3>Images for: <code>${email}</code>.</h3>
             <div class="img-grid"></div>`;
         if (firstImage) {
             this.addImage(firstImage);
@@ -86,28 +86,46 @@ function assignCurrentImage(email) {
     if (emailAssign == null) {
         emailAssign = new EmailGrid(email, randomindex);
         emailGrids.unshift(emailAssign)
+        if (selectedEmail != '' || emailGrids.length == 1) {
+            setActiveEmail(email);
+        } else {
+            // need to update all-display to include new email
+            setAllEmail();
+        }
     } else {
         emailAssign.addImage(randomindex);
+        emailGrids.splice(emailGrids.indexOf(emailAssign), 1);
+        emailGrids.unshift(emailAssign);
+        if (selectedEmail != '' || emailGrids.length == 1) {
+            setActiveEmail(email);
+        }
     }
-    setActiveEmail(email);
     newCurrentImage();
 }
 
 function setActiveEmail(email) {
     if (email == selectedEmail) {return;}
-    const eg = getEmailObject(email);
     selectedEmail = email;
     select.value = email;
+    if (email == '') {return setAllEmail();}
+    const eg = getEmailObject(email);
 
     assignedImages.innerHTML = '';
     assignedImages.appendChild(eg.element);
+}
+function setAllEmail() {
+    assignedImages.innerHTML = '';
+    for (eg of emailGrids) {
+        assignedImages.appendChild(eg.element);
+    }
+
 }
 
 select.addEventListener('change', () => {
     setActiveEmail(select.value);
 })
 
-
+select.innerHTML = '<option value="">all</option>';
 newCurrentImage();
 
 assignCurrentImage('test1');
