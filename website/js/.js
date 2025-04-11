@@ -33,12 +33,12 @@ function validEmail() {
     }
 }
 
-document.getElementById('submit').addEventListener('click', () => {
-    if (validEmail()) {
-        // display error message
+submit.addEventListener('click', () => {
+    if (!validEmail()) {
+        // display error message?
     }
 });
-document.getElementById('email').addEventListener('focusout', () => {
+email.addEventListener('focusout', () => {
     validEmail();
 });
 form.addEventListener('submit', (event) =>  {
@@ -128,10 +128,10 @@ select.addEventListener('change', () => {
 select.innerHTML = '<option value="">all</option>';
 newCurrentImage();
 
-assignCurrentImage('test1');
-assignCurrentImage('test1');
-assignCurrentImage('test1');
-assignCurrentImage('test1');
-assignCurrentImage('test1');
-assignCurrentImage('test2');
-assignCurrentImage('test2');
+// assignCurrentImage('test1');
+// assignCurrentImage('test1');
+// assignCurrentImage('test1');
+// assignCurrentImage('test1');
+// assignCurrentImage('test1');
+// assignCurrentImage('test2');
+// assignCurrentImage('test2');
