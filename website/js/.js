@@ -3,7 +3,9 @@ const assignedImages = document.getElementById('assignedImages');
 
 const email = document.getElementById('email');
 const submit = document.getElementById('submit');
-const form = document.getElementsByTagName('form')[0];
+const form = document.getElementById('newForm');
+
+const select = document.getElementById('selectEmail');
 
 const email_regex = new RegExp(String.raw`^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$`);
 const url = "https://picsum.photos/512?random="
@@ -44,38 +46,66 @@ form.addEventListener('submit', (event) =>  {
     assignCurrentImage(email.value);
 });
 
+class EmailGrid {
+    constructor(email, firstImage) {
+        this.email = email;
+        this.images = [];
+        const selectOption = document.createElement('option');
+        selectOption.value = this.email;
+        selectOption.textContent = this.email;
+        select.append(selectOption);
+        this.element = document.createElement('div');
+        this.element.classList.add('box');
+        this.element.innerHTML = `<h2>Images for: <code>${email}</code>.</h2>
+            <div class="img-grid"></div>`;
+        if (firstImage) {
+            this.addImage(firstImage);
+        }
+    }
+    addImage(image) {
+        this.images.unshift(image);
+        const grid = this.element.getElementsByClassName('img-grid')[0];
+        grid.innerHTML = `<img src=${url}${image} alt />` + grid.innerHTML;
+    }
+}
 
-function getAssignElement(email) {
-    for (box of assignedImages.children) {
-        const emails = box.getElementsByClassName('email');
-        if (emails.length == 0) {continue;}
-        if (emails[0].textContent == email) {
-            assignedImages.prepend(box);
-            return box;
+const emailGrids = [];
+let selectedEmail = '';
+
+function getEmailObject(email) {
+    for (eg of emailGrids) {
+        if (eg.email == email) {
+            return eg;
         }
     }
     return null;
 }
 
 function assignCurrentImage(email) {
-    let emailAssign = getAssignElement(email);
+    let emailAssign = getEmailObject(email);
     if (emailAssign == null) {
-        emailAssign = document.createElement('div');
-        emailAssign.classList.add('box');
-        assignedImages.prepend(emailAssign);
+        emailAssign = new EmailGrid(email, randomindex);
+        emailGrids.unshift(emailAssign)
+    } else {
+        emailAssign.addImage(randomindex);
     }
-    let grids = emailAssign.getElementsByClassName('img-grid');
-    if (grids.length == 0) {
-        emailAssign.innerHTML = `<p class="email hidden">${email}</p>
-            <h2>Images for: <code>${email}</code>.</h2>
-            <div class="img-grid">
-            </div>`;
-        grids = emailAssign.getElementsByClassName('img-grid');
-    }
-    const grid = grids[0];
-    grid.innerHTML += `<img src=${url}${randomindex} alt />`;
+    setActiveEmail(email);
     newCurrentImage();
 }
+
+function setActiveEmail(email) {
+    if (email == selectedEmail) {return;}
+    const eg = getEmailObject(email);
+    selectedEmail = email;
+    select.value = email;
+
+    assignedImages.innerHTML = '';
+    assignedImages.appendChild(eg.element);
+}
+
+select.addEventListener('change', () => {
+    setActiveEmail(select.value);
+})
 
 
 newCurrentImage();
