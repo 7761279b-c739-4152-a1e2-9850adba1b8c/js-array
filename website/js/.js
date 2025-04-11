@@ -1,5 +1,6 @@
 const currentImage = document.getElementById('currentImage');
 const assignedImages = document.getElementById('assignedImages');
+const assignedWrapper = document.getElementById('assignedWrapper');
 
 const email = document.getElementById('email');
 const submit = document.getElementById('submit');
@@ -92,6 +93,7 @@ function assignCurrentImage(email) {
             // need to update all-display to include new email
             setAllEmail();
         }
+        assignedWrapper.style.display = "block";
     } else {
         emailAssign.addImage(randomindex);
         emailGrids.splice(emailGrids.indexOf(emailAssign), 1);
@@ -125,7 +127,7 @@ select.addEventListener('change', () => {
     setActiveEmail(select.value);
 })
 
-select.innerHTML = '<option value="">all</option>';
+select.innerHTML = '<option value="">All Emails</option>';
 newCurrentImage();
 
 // assignCurrentImage('test1');

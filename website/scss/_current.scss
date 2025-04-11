@@ -1,7 +1,9 @@
 
 .current {
+    h2 {
+        margin: rems(32px) 0 rems(16px) 0;
+    }
     form {
-        margin-top: rems(32px);
         width: 512px;
         max-width: 100%;
         display: flex;

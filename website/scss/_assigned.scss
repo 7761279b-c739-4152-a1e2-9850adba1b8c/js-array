@@ -1,54 +1,57 @@
-#assignedImages {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: rems(-24px);
-    
-    .img-grid {
-        display: grid;
-        gap: rems(16px);
-        grid-template-columns: 1fr;
-        @media (min-width: $breakpoint-small) {
-            grid-template-columns: 1fr 1fr;
-        }
-        @media (min-width: $breakpoint-medium) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-}
-
-.select {
-    display: flex;
-    flex-direction: column;
-    @media (min-width: $breakpoint-small) {
-        flex-direction: row;
-    }
-    align-items: center;
-    width: 512px;
-    max-width: 100%;
-
-    h2 {
-        @media (min-width: $breakpoint-small) {
-            flex: 1 1 512px;
+#assignedWrapper {
+    display: none;
+    #assignedImages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: rems(-24px);
+        
+        .img-grid {
+            display: grid;
+            gap: rems(16px);
+            grid-template-columns: 1fr;
+            @media (min-width: $breakpoint-small) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @media (min-width: $breakpoint-medium) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
     }
 
-    select {
-        font-size: rems(16px);
-        width: 100%;
-        max-width: 256px;
+    .select {
+        display: flex;
+        flex-direction: column;
         @media (min-width: $breakpoint-small) {
-            flex: 1 1 256px;
+            flex-direction: row;
         }
-        padding: rems(8px);
-        border-radius: rems(4px);
-        outline: 0;
-        color: $color-text;
-        background-color: $color-input-background;
-        border: 2px solid $color-input-border;
-        &:focus {
-            border-color: $color-theme;
-            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+        align-items: center;
+        width: 512px;
+        max-width: 100%;
+
+        h2 {
+            @media (min-width: $breakpoint-small) {
+                flex: 1 1 512px;
+            }
+        }
+
+        select {
+            font-size: rems(16px);
+            width: 100%;
+            max-width: 256px;
+            @media (min-width: $breakpoint-small) {
+                flex: 1 1 256px;
+            }
+            padding: rems(8px);
+            border-radius: rems(4px);
+            outline: 0;
+            color: $color-text;
+            background-color: $color-input-background;
+            border: 2px solid $color-input-border;
+            &:focus {
+                border-color: $color-theme;
+                box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+            }
         }
     }
 }
