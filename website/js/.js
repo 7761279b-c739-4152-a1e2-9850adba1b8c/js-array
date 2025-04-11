@@ -96,7 +96,7 @@ function assignCurrentImage(email) {
         emailAssign.addImage(randomindex);
         emailGrids.splice(emailGrids.indexOf(emailAssign), 1);
         emailGrids.unshift(emailAssign);
-        if (selectedEmail != '' || emailGrids.length == 1) {
+        if (selectedEmail != '') {
             setActiveEmail(email);
         }
     }
