@@ -7,17 +7,22 @@
         margin-top: rems(16px);
         width: 512px;
         max-width: 100%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "input " "reroll" "previous" "save";
+        @media (min-width: $breakpoint-xsmall) {
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: "input input" "reroll previous" "save save";
+        }
         @media (min-width: $breakpoint-small) {
-            flex-direction: row;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: "input save" "reroll previous";
         }
         justify-content: space-between;
         gap: rems(16px);
         input {
-            @media (min-width: $breakpoint-small) {
-                flex: 1 1 100px;
-            }
             &:focus {
                 border-color: $color-theme;
                 box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
@@ -50,16 +55,17 @@
             border: 2px solid $color-input-border;
             font-size: rems(16px);
         }
-        #save, #previous {
-            @media (min-width: $breakpoint-small) {
-                flex: 1 1 25px;
-                max-width: 150px;
-            }
+        input {
+            grid-area: input;
+        }
+        #save {
+            grid-area: save;
         }
         #reroll {
-            @media (min-width: $breakpoint-small) {
-                flex: 1 1 100px;
-            }
+            grid-area: reroll;
+        }
+        #previous {
+            grid-area: previous;
         }
     }
 }

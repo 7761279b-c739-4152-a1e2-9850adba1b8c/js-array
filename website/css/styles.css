@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-/* line 6, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 5, ../../js_arrays_assessment/website/scss/_layout.scss */
 body {
   background-color: #ddd;
   color: #000;
@@ -12,13 +12,13 @@ body {
   font-family: sans-serif;
 }
 
-/* line 14, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 13, ../../js_arrays_assessment/website/scss/_layout.scss */
 .container {
   margin: 0 Min(4rem, 10%);
   margin-bottom: 2rem;
 }
 
-/* line 19, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 18, ../../js_arrays_assessment/website/scss/_layout.scss */
 .box {
   background-color: #fff;
   border-radius: 0.5rem;
@@ -31,7 +31,7 @@ body {
   align-items: center;
 }
 
-/* line 31, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 30, ../../js_arrays_assessment/website/scss/_layout.scss */
 img {
   width: 512px;
   max-width: 100%;
@@ -40,19 +40,19 @@ img {
   border-radius: 2px;
 }
 
-/* line 39, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 38, ../../js_arrays_assessment/website/scss/_layout.scss */
 .hidden {
   display: none;
 }
 
-/* line 43, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 42, ../../js_arrays_assessment/website/scss/_layout.scss */
 h3 {
   margin: 0 0 1rem 0;
   align-self: baseline;
   font-weight: 600;
 }
 
-/* line 48, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 47, ../../js_arrays_assessment/website/scss/_layout.scss */
 h2 {
   margin: 0 0 1rem 0;
 }
@@ -67,62 +67,67 @@ h2 {
   margin-top: 1rem;
   width: 512px;
   max-width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "input " "reroll" "previous" "save";
   justify-content: space-between;
   gap: 1rem;
+}
+
+@media (min-width: 500px) {
+  /* line 6, ../../js_arrays_assessment/website/scss/_current.scss */
+  .current form {
+    grid-template-columns: 1fr 150px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "input input" "reroll previous" "save save";
+  }
 }
 
 @media (min-width: 800px) {
   /* line 6, ../../js_arrays_assessment/website/scss/_current.scss */
   .current form {
-    flex-direction: row;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "input save" "reroll previous";
   }
 }
 
-@media (min-width: 800px) {
-  /* line 17, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form input {
-    flex: 1 1 100px;
-  }
-}
-
-/* line 21, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 26, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input:focus {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
-/* line 25, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 30, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input::placeholder {
   color: #999;
 }
 
-/* line 28, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 33, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input.invalid {
   background-color: #ecc;
   border-color: #f99;
 }
 
-/* line 31, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 36, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input.invalid:focus {
   border-color: #d33;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(221, 51, 51, 0.6);
 }
 
-/* line 37, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 42, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form button {
   color: #000;
   text-align: center;
 }
 
-/* line 40, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 45, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form button:focus, .current form button:hover {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
-/* line 45, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 50, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input, .current form button {
   padding: 0.5rem;
   border-radius: 0.25rem;
@@ -132,19 +137,24 @@ h2 {
   font-size: 1rem;
 }
 
-@media (min-width: 800px) {
-  /* line 53, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form #save, .current form #previous {
-    flex: 1 1 25px;
-    max-width: 150px;
-  }
+/* line 58, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form input {
+  grid-area: input;
 }
 
-@media (min-width: 800px) {
-  /* line 59, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form #reroll {
-    flex: 1 1 100px;
-  }
+/* line 61, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form #save {
+  grid-area: save;
+}
+
+/* line 64, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form #reroll {
+  grid-area: reroll;
+}
+
+/* line 67, ../../js_arrays_assessment/website/scss/_current.scss */
+.current form #previous {
+  grid-area: previous;
 }
 
 /* line 1, ../../js_arrays_assessment/website/scss/_assigned.scss */
@@ -162,7 +172,7 @@ h2 {
 /* line 8, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper #assignedImages .img-grid {
   display: grid;
-  gap: 0;
+  gap: 1rem;
   grid-template-columns: 1fr;
 }
 

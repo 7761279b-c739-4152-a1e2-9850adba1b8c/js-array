@@ -5,11 +5,9 @@ const assignedWrapper = document.getElementById('assignedWrapper');
 const email = document.getElementById('email');
 const save = document.getElementById('save');
 const assignForm = document.getElementById('assignForm');
-
-const imageForm = document.getElementById('imageForm');
 const nextbutton = document.getElementById('reroll');
 const prevbutton = document.getElementById('previous');
-prevbutton.style.opacity = "0";
+prevbutton.style.display = "none";
 
 const select = document.getElementById('selectEmail');
 
@@ -26,15 +24,20 @@ function newCurrentImage() {
         maxrandomindex = randomindex;
         nextbutton.textContent = "Choose new image";
     }
-    if (maxrandomindex > 1) {
+    if (randomindex == 2) {
         // first reroll after initial image
-        prevbutton.style.opacity = "";
+        prevbutton.style.display = "";
     }
 }
 function previousImage() {
+    if (randomindex <= 1) {return;}
     randomindex -= 1;
     currentImage.src = url + randomindex;
     nextbutton.textContent = "Next image";
+    if (randomindex == 1) {
+        prevbutton.style.display = "none";
+    }
+
 }
 
 function validEmail() {
@@ -76,21 +79,15 @@ save.addEventListener('click', () => {
         // display error message?
     }
 });
+nextbutton.addEventListener('click', newCurrentImage);
+prevbutton.addEventListener('click', previousImage);
+
 email.addEventListener('focusout', () => {
     validEmail();
 });
 assignForm.addEventListener('submit', (event) =>  {
     event.preventDefault();
     assignCurrentImage(formatEmail(email.value));
-});
-
-imageForm.addEventListener('submit', (event) =>  {
-    event.preventDefault();
-    if (event.submitter.value == 'new') {
-        newCurrentImage();
-    } else if (randomindex > 1) {
-        previousImage();
-    }
 });
 
 class EmailGrid {

@@ -7,7 +7,7 @@
         
         .img-grid {
             display: grid;
-            gap: 0;
+            gap: rems(16px);
             grid-template-columns: 1fr;
             @media (min-width: $breakpoint-small) {
                 grid-template-columns: 1fr 1fr;
