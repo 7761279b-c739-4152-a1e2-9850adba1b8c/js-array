@@ -43,7 +43,7 @@ function validEmail() {
         email.setCustomValidity("");
         return true;
     } else {
-        email.className = 'invalid'
+        email.className = 'invalid';
         if (email.value == '') {
             email.setCustomValidity("Please enter an email address");
         } else {
@@ -52,15 +52,27 @@ function validEmail() {
         return false;
     }
 }
-function formatEmail(email) {
+function formatEmail(email_value) {
     // email domains are case insensitive, so always use lower case. However, we cannot assume the host uses a case-insensitive local part.
-    const email_parts = email.split('@');
+    const email_parts = email_value.split('@');
     email_parts[email_parts.length - 1] = email_parts[email_parts.length - 1].toLowerCase();
     return email_parts.join('@');
 }
+function validSubmit() {
+    // check the submission isn't a duplicate
+    const emailAssign = getEmailObject(formatEmail(email.value));
+    console.log(emailAssign);
+    if (emailAssign == null || !emailAssign.contains(randomindex)) {
+        return true;
+    }
+    console.log('invalid');
+    email.className = 'invalid';
+    email.setCustomValidity("Image is already assigned to that email");
+    return false;
+}
 
 submit.addEventListener('click', () => {
-    if (!validEmail()) {
+    if (!validEmail() || !validSubmit()) {
         // display error message?
     }
 });
@@ -91,7 +103,7 @@ class EmailGrid {
         select.append(selectOption);
         this.element = document.createElement('div');
         this.element.classList.add('box');
-        this.element.innerHTML = `<h3>Images for: <code>${email}</code>.</h3>
+        this.element.innerHTML = `<h3>Images for: <code>${this.email}</code>.</h3>
             <div class="img-grid"></div>`;
         if (firstImage) {
             this.addImage(firstImage);
@@ -102,6 +114,9 @@ class EmailGrid {
         this.images.unshift(image);
         const grid = this.element.getElementsByClassName('img-grid')[0];
         grid.innerHTML = `<img src=${url}${image} alt />` + grid.innerHTML;
+    }
+    contains(image) {
+        return this.images.includes(image);
     }
 }
 
