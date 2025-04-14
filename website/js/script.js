@@ -22,7 +22,7 @@ function newCurrentImage() {
     // get size dynamically?
     randomindex += 1;
     currentImage.src = url + randomindex;
-    if (maxrandomindex < randomindex) {
+    if (maxrandomindex <= randomindex) {
         maxrandomindex = randomindex;
         nextbutton.textContent = "Choose new image";
     }
