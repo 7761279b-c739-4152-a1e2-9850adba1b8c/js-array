@@ -64,11 +64,9 @@ function formatEmail(email_value) {
 function validSave() {
     // check the submission isn't a duplicate
     const emailAssign = getEmailObject(formatEmail(email.value));
-    console.log(emailAssign);
     if (emailAssign == null || !emailAssign.contains(randomindex)) {
         return true;
     }
-    console.log('invalid');
     email.className = 'invalid';
     email.setCustomValidity("Image is already assigned to that email");
     return false;
@@ -110,12 +108,21 @@ class EmailGrid {
         if (this.images.includes(image)) {return;}
         this.images.unshift(image);
         const grid = this.element.getElementsByClassName('img-grid')[0];
-        grid.innerHTML = `<img src=${url}${image} alt />` + grid.innerHTML;
+        grid.innerHTML = `<div><img src=${url}${image} alt /><div class="btn" value="${image}" tabindex="0">Remove</div></div>` + grid.innerHTML;
     }
     contains(image) {
         return this.images.includes(image);
     }
+    removeImage(image) {
+        const i = this.images.indexOf(Number(image));
+        const grid = this.element.getElementsByClassName('img-grid')[0];
+        grid.removeChild(grid.childNodes[i]);
+        this.images.splice(i, 1);
+
+    }
 }
+
+
 
 const emailGrids = [];
 let selectedEmail = '';
@@ -123,6 +130,14 @@ let selectedEmail = '';
 function getEmailObject(email) {
     for (eg of emailGrids) {
         if (eg.email == email) {
+            return eg;
+        }
+    }
+    return null;
+}
+function getElementObject(element) {
+    for (eg of emailGrids) {
+        if (eg.element == element) {
             return eg;
         }
     }
@@ -166,8 +181,23 @@ function setAllEmail() {
     for (eg of emailGrids) {
         assignedImages.appendChild(eg.element);
     }
-
 }
+
+function checkRemoveButton(event) {
+    if (event.target.classList.contains('btn')) {
+        const eg = getElementObject(event.target.parentElement.parentElement.parentElement);
+        eg.removeImage(event.target.getAttribute('value'));
+    }
+}
+assignedImages.addEventListener('click', (event) => {
+    checkRemoveButton(event);
+});
+assignedImages.addEventListener('onkeydown', (event) => {
+    if (event.key === 'Enter') {
+        checkRemoveButton(event);
+    }
+});
+
 
 select.addEventListener('change', () => {
     setActiveEmail(select.value);
