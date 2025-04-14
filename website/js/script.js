@@ -26,7 +26,7 @@ function newCurrentImage() {
         maxrandomindex = randomindex;
         nextbutton.textContent = "Choose new image";
     }
-    if (randomindex > 1) {
+    if (maxrandomindex > 1) {
         // first reroll after initial image
         prevbutton.style.opacity = "";
     }
@@ -52,6 +52,12 @@ function validEmail() {
         return false;
     }
 }
+function formatEmail(email) {
+    // email domains are case insensitive, so always use lower case. However, we cannot assume the host uses a case-insensitive local part.
+    const email_parts = email.split('@');
+    email_parts[email_parts.length - 1] = email_parts[email_parts.length - 1].toLowerCase();
+    return email_parts.join('@');
+}
 
 submit.addEventListener('click', () => {
     if (!validEmail()) {
@@ -63,7 +69,7 @@ email.addEventListener('focusout', () => {
 });
 assignForm.addEventListener('submit', (event) =>  {
     event.preventDefault();
-    assignCurrentImage(email.value);
+    assignCurrentImage(formatEmail(email.value));
 });
 
 imageForm.addEventListener('submit', (event) =>  {
