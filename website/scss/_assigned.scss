@@ -4,11 +4,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: rems(-24px);
         
         .img-grid {
             display: grid;
-            gap: rems(16px);
+            gap: 0;
             grid-template-columns: 1fr;
             @media (min-width: $breakpoint-small) {
                 grid-template-columns: 1fr 1fr;

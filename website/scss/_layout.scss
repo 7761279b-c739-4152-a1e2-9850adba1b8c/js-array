@@ -13,13 +13,14 @@ body {
 
 .container {
     margin: 0 Min(rems(64px), 10%);
+    margin-bottom: rems(32px);
 }
 
 .box {
     background-color: $color-box-background;
     border-radius: rems(8px);
     border: 1px solid $color-box-border;
-    margin: rems(16px) 0;
+    margin: rems(16px) 0 0 0;
     padding: rems(32px);
     width: 100%;
     display: flex;

@@ -15,14 +15,15 @@ body {
 /* line 14, ../../js_arrays_assessment/website/scss/_layout.scss */
 .container {
   margin: 0 Min(4rem, 10%);
+  margin-bottom: 2rem;
 }
 
-/* line 18, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 19, ../../js_arrays_assessment/website/scss/_layout.scss */
 .box {
   background-color: #fff;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   padding: 2rem;
   width: 100%;
   display: flex;
@@ -30,7 +31,7 @@ body {
   align-items: center;
 }
 
-/* line 30, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 31, ../../js_arrays_assessment/website/scss/_layout.scss */
 img {
   width: 512px;
   max-width: 100%;
@@ -39,19 +40,19 @@ img {
   border-radius: 2px;
 }
 
-/* line 38, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 39, ../../js_arrays_assessment/website/scss/_layout.scss */
 .hidden {
   display: none;
 }
 
-/* line 42, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 43, ../../js_arrays_assessment/website/scss/_layout.scss */
 h3 {
   margin: 0 0 1rem 0;
   align-self: baseline;
   font-weight: 600;
 }
 
-/* line 47, ../../js_arrays_assessment/website/scss/_layout.scss */
+/* line 48, ../../js_arrays_assessment/website/scss/_layout.scss */
 h2 {
   margin: 0 0 1rem 0;
 }
@@ -156,31 +157,30 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -1.5rem;
 }
 
-/* line 9, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 8, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper #assignedImages .img-grid {
   display: grid;
-  gap: 1rem;
+  gap: 0;
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 800px) {
-  /* line 9, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  /* line 8, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper #assignedImages .img-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1280px) {
-  /* line 9, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  /* line 8, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper #assignedImages .img-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-/* line 22, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 21, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select {
   display: flex;
   flex-direction: column;
@@ -192,26 +192,26 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  /* line 22, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  /* line 21, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper .select {
     flex-direction: row;
   }
 }
 
-/* line 34, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 33, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select h2 {
   margin: 0;
   min-width: fit-content;
 }
 
 @media (min-width: 800px) {
-  /* line 34, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  /* line 33, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper .select h2 {
     flex: 1 1 512px;
   }
 }
 
-/* line 42, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 41, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select select {
   font-size: 1rem;
   min-width: fit-content;
@@ -226,13 +226,13 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  /* line 42, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  /* line 41, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper .select select {
     flex: 1 1 256px;
   }
 }
 
-/* line 56, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 55, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select select:focus {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
