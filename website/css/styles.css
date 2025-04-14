@@ -133,7 +133,7 @@ h2 {
 
 @media (min-width: 800px) {
   /* line 53, ../../js_arrays_assessment/website/scss/_current.scss */
-  .current form #submit, .current form #previous {
+  .current form #save, .current form #previous {
     flex: 1 1 25px;
     max-width: 150px;
   }

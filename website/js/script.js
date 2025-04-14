@@ -3,7 +3,7 @@ const assignedImages = document.getElementById('assignedImages');
 const assignedWrapper = document.getElementById('assignedWrapper');
 
 const email = document.getElementById('email');
-const submit = document.getElementById('submit');
+const save = document.getElementById('save');
 const assignForm = document.getElementById('assignForm');
 
 const imageForm = document.getElementById('imageForm');
@@ -58,7 +58,7 @@ function formatEmail(email_value) {
     email_parts[email_parts.length - 1] = email_parts[email_parts.length - 1].toLowerCase();
     return email_parts.join('@');
 }
-function validSubmit() {
+function validSave() {
     // check the submission isn't a duplicate
     const emailAssign = getEmailObject(formatEmail(email.value));
     console.log(emailAssign);
@@ -71,8 +71,8 @@ function validSubmit() {
     return false;
 }
 
-submit.addEventListener('click', () => {
-    if (!validEmail() || !validSubmit()) {
+save.addEventListener('click', () => {
+    if (!validEmail() || !validSave()) {
         // display error message?
     }
 });

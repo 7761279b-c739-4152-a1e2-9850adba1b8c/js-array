@@ -50,7 +50,7 @@
             border: 2px solid $color-input-border;
             font-size: rems(16px);
         }
-        #submit, #previous {
+        #save, #previous {
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 25px;
                 max-width: 150px;
