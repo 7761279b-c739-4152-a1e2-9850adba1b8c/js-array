@@ -42,7 +42,15 @@ h3 {
     margin: 0 0 rems(16px) 0;
     align-self: baseline;
     font-weight: 600;
+    font-size: rems(16px);
+    @media (min-width: $breakpoint-xsmall) {
+        font-size: rems(24px);
+    }
 }
 h2 {
     margin: 0 0 rems(16px) 0;
+    font-size: rems(16px);
+    @media (min-width: $breakpoint-xsmall) {
+        font-size: rems(24px);
+    }
 }

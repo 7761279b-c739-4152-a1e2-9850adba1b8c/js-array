@@ -52,7 +52,10 @@
         }
 
         select {
-            font-size: rems(16px);
+            font-size: rems(12px);
+            @media (min-width: $breakpoint-xsmall) {
+                font-size: rems(16px);
+            }
             width: 256px;
             max-width: 100%;
             @media (min-width: $breakpoint-small) {
@@ -74,7 +77,10 @@
     .btn {
         top: 0;
         right: 0;
-        font-size: rems(16px);
+        font-size: rems(12px);
+        @media (min-width: $breakpoint-xsmall) {
+            font-size: rems(16px);
+        }
         width: fit-content;
         padding: rems(8px);
         border-radius: 0 0 0 rems(4px);

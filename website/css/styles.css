@@ -49,11 +49,27 @@ h3 {
   margin: 0 0 1rem 0;
   align-self: baseline;
   font-weight: 600;
+  font-size: 1rem;
 }
 
-/* line 46, ../../js_arrays_assessment/website/scss/_layout.scss */
+@media (min-width: 500px) {
+  /* line 41, ../../js_arrays_assessment/website/scss/_layout.scss */
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* line 50, ../../js_arrays_assessment/website/scss/_layout.scss */
 h2 {
   margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+  /* line 50, ../../js_arrays_assessment/website/scss/_layout.scss */
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* line 3, ../../js_arrays_assessment/website/scss/_current.scss */
@@ -133,25 +149,32 @@ h2 {
   outline: 0;
   background-color: #ddd;
   border: 2px solid #ccc;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
-/* line 58, ../../js_arrays_assessment/website/scss/_current.scss */
+@media (min-width: 500px) {
+  /* line 50, ../../js_arrays_assessment/website/scss/_current.scss */
+  .current form input, .current form button {
+    font-size: 1rem;
+  }
+}
+
+/* line 61, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form input {
   grid-area: input;
 }
 
-/* line 61, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 64, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form #save {
   grid-area: save;
 }
 
-/* line 64, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 67, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form #reroll {
   grid-area: reroll;
 }
 
-/* line 67, ../../js_arrays_assessment/website/scss/_current.scss */
+/* line 70, ../../js_arrays_assessment/website/scss/_current.scss */
 .current form #previous {
   grid-area: previous;
 }
@@ -239,7 +262,7 @@ h2 {
 
 /* line 54, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select select {
-  font-size: 1rem;
+  font-size: 0.75rem;
   width: 256px;
   max-width: 100%;
   padding: 0.5rem;
@@ -250,6 +273,13 @@ h2 {
   border: 2px solid #ccc;
 }
 
+@media (min-width: 500px) {
+  /* line 54, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  #assignedWrapper .select select {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 800px) {
   /* line 54, ../../js_arrays_assessment/website/scss/_assigned.scss */
   #assignedWrapper .select select {
@@ -257,17 +287,17 @@ h2 {
   }
 }
 
-/* line 67, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 70, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .select select:focus {
   border-color: #8e0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 238, 0, 0.6);
 }
 
-/* line 74, ../../js_arrays_assessment/website/scss/_assigned.scss */
+/* line 77, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .btn {
   top: 0;
   right: 0;
-  font-size: 1rem;
+  font-size: 0.75rem;
   width: fit-content;
   padding: 0.5rem;
   border-radius: 0 0 0 0.25rem;
@@ -278,7 +308,14 @@ h2 {
   cursor: pointer;
 }
 
-/* line 86, ../../js_arrays_assessment/website/scss/_assigned.scss */
+@media (min-width: 500px) {
+  /* line 77, ../../js_arrays_assessment/website/scss/_assigned.scss */
+  #assignedWrapper .btn {
+    font-size: 1rem;
+  }
+}
+
+/* line 92, ../../js_arrays_assessment/website/scss/_assigned.scss */
 #assignedWrapper .btn:focus, #assignedWrapper .btn:hover {
   border-color: #d33;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(221, 51, 51, 0.6);

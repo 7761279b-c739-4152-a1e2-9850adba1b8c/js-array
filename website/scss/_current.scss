@@ -53,7 +53,10 @@
             outline: 0;
             background-color: $color-input-background;
             border: 2px solid $color-input-border;
-            font-size: rems(16px);
+            font-size: rems(12px);
+            @media (min-width: $breakpoint-xsmall) {
+                font-size: rems(16px);
+            }
         }
         input {
             grid-area: input;
