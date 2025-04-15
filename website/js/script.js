@@ -1,4 +1,5 @@
 const currentImage = document.getElementById('currentImage');
+const nextImage = document.getElementById('nextImage');
 const assignedImages = document.getElementById('assignedImages');
 const assignedWrapper = document.getElementById('assignedWrapper');
 
@@ -23,6 +24,7 @@ function newCurrentImage() {
     if (maxrandomindex <= randomindex) {
         maxrandomindex = randomindex;
         nextbutton.textContent = "Choose new image";
+        nextImage.src = url + (randomindex + 1);
     }
     if (randomindex == 2) {
         // first reroll after initial image
