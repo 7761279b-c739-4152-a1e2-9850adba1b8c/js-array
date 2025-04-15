@@ -7,7 +7,7 @@
         
         .img-grid {
             display: grid;
-            gap: rems(16px);
+            gap: rems(32px) rems(16px);
             grid-template-columns: 1fr;
             @media (min-width: $breakpoint-small) {
                 grid-template-columns: 1fr 1fr;
@@ -59,11 +59,18 @@
         }
     }
 
+    img {
+        width: 514px;
+        max-width: 100%;
+        border: 3px solid $color-image-border;
+        border-radius: 2px 2px 0 0 ;
+    }
+
     .btn {
         font-size: rems(16px);
         width: 100%;
         padding: rems(8px);
-        border-radius: rems(4px);
+        border-radius: 0 0 rems(4px) rems(4px);
         outline: 0;
         color: $color-text;
         background-color: $color-input-background;
@@ -72,6 +79,5 @@
             border-color: $color-theme;
             box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
         }
-        
     }
 }
