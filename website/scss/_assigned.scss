@@ -39,13 +39,13 @@
             flex-direction: row;
         }
         align-items: center;
-        min-width: 512px;
-        width: fit-content;
+        width: 512px;
         max-width: 100%;
 
         h2 {
             margin: 0;
-            min-width: fit-content;
+            width: fit-content;
+            max-width: 100%;
             @media (min-width: $breakpoint-small) {
                 flex: 1 1 512px;
             }
@@ -53,7 +53,6 @@
 
         select {
             font-size: rems(16px);
-            min-width: fit-content;
             width: 256px;
             max-width: 100%;
             @media (min-width: $breakpoint-small) {
