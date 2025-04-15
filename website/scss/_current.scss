@@ -52,6 +52,9 @@
             border-radius: rems(4px);
             outline: 0;
             background-color: $color-input-background;
+            &:active, &:focus-within {
+                background-color: $color-input-background-click;
+            }
             border: 2px solid $color-input-border;
             font-size: rems(12px);
             @media (min-width: $breakpoint-xsmall) {

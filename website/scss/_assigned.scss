@@ -66,6 +66,9 @@
             outline: 0;
             color: $color-text;
             background-color: $color-input-background;
+            &:active {
+                background-color: $color-input-background-click;
+            }
             border: 2px solid $color-input-border;
             &:focus {
                 border-color: $color-theme;
@@ -87,6 +90,9 @@
         outline: 0;
         color: $color-text;
         background-color: $color-input-background-wrong;
+            &:active {
+                background-color: $color-input-background-wrong-click;
+            }
         border: 2px solid $color-input-border-wrong;
         cursor: pointer;
         &:focus, &:hover {
