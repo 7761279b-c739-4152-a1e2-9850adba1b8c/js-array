@@ -27,6 +27,13 @@ body {
     align-items: center;
 }
 
+img {
+    width: 514px;
+    max-width: 100%;
+    border: 3px solid $color-image-border;
+    border-radius: 2px 2px 0 0 ;
+}
+
 .hidden {
     display: none;
 }
