@@ -15,6 +15,19 @@
             @media (min-width: $breakpoint-medium) {
                 grid-template-columns: 1fr 1fr 1fr;
             }
+            div {
+                position: relative;
+                .btn {
+                    z-index: 1;
+                    display: none;
+                    position: absolute;
+                }
+                &:hover {
+                    .btn {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 
@@ -59,22 +72,21 @@
         }
     }
 
-    img {
-        border-radius: 2px 2px 0 0 ;
-    }
-
     .btn {
+        top: 0;
+        right: 0;
         font-size: rems(16px);
-        width: 100%;
+        width: fit-content;
         padding: rems(8px);
-        border-radius: 0 0 rems(4px) rems(4px);
+        border-radius: 0 0 0 rems(4px);
         outline: 0;
         color: $color-text;
-        background-color: $color-input-background;
-        border: 2px solid $color-input-border;
+        background-color: $color-input-background-wrong;
+        border: 2px solid $color-input-border-wrong;
+        cursor: pointer;
         &:focus, &:hover {
-            border-color: $color-theme;
-            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-theme, 0.6);
+            border-color: $color-input-wrong;
+            box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba($color-input-wrong, 0.6);
         }
     }
 }
